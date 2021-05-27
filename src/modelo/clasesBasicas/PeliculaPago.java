@@ -14,7 +14,6 @@ public class PeliculaPago extends Pelicula{
 
     public PeliculaPago() {
         this.coste = 0;
-        this.tasaImpacto = super.calcularTasa();
     }
 
     //Constructor por parametros
@@ -22,7 +21,6 @@ public class PeliculaPago extends Pelicula{
     public PeliculaPago(String nombre, LocalDate fechaLanzamiento, double notaCritica, double presupuesto, double coste) {
         super(nombre, fechaLanzamiento, notaCritica, presupuesto);
         this.coste = coste;
-        this.tasaImpacto = super.calcularTasa();
     }
 
     //Getters and setters
@@ -42,6 +40,9 @@ public class PeliculaPago extends Pelicula{
     //Metodos anhadidos
 
     /**
+     * Precondiciones: constante existente
+     * Entradas: Ninguna
+     * Salida: calculo resultante de multiplicar el coste con la constante del valor especifico
      * Descripcion: Metodo para calcular el valor del valor especifico de cada pelicula(se diferencia entre peliculas y peliculas de pago), necesario para calcular la tasa
      *
      * @return double con valos especifico

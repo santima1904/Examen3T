@@ -11,8 +11,6 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
     private double notaCritica;
     private double presupuesto;
 
-    //Atributos calculados
-    protected double tasaImpacto;//el atributo es protected para poder usarlo con las clases hijas
 
     //Constantes
     public final double CONSTANTE_TASA = 2;
@@ -23,7 +21,7 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
         this.fechaLanzamiento = null;
         this.notaCritica = 5;
         this.presupuesto = 0;
-        this.tasaImpacto = calcularTasa();
+
     }
 
     //Constructor por parametros
@@ -33,7 +31,6 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
         this.fechaLanzamiento = fechaLanzamiento;
         this.notaCritica = notaCritica;
         this.presupuesto = presupuesto;
-        this.tasaImpacto = calcularTasa();
     }
 
     //Getters and setters
@@ -63,9 +60,6 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
         return presupuesto;
     }
 
-    public double getTasaImpacto() {
-        return tasaImpacto;
-    }
 
     //Metodos de la clase Object
 
@@ -77,7 +71,6 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
                 fechaLanzamiento+","
                 +notaCritica+","
                 + presupuesto +","
-                + tasaImpacto
                 ;
     }
     //TODO me falta hacer la ordenacion al reves, de la z a la a
@@ -122,7 +115,7 @@ public class Pelicula implements Serializable, Comparable<Pelicula> {
      *
      * @return double con el valor de la tasa de impacto
      */
-    public double calcularTasa(){//hago el metodo protected para poder usarlo con sus clases hijas
+    public double getTasa(){//hago el metodo protected para poder usarlo con sus clases hijas
 
         return (getNotaCritica() * CONSTANTE_TASA + calcularValorEspecifico()) * CONSTANTE_TASA;
     }

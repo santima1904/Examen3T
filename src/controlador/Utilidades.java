@@ -18,7 +18,7 @@ public class Utilidades {
      */
     public static List<Pelicula> ordenar(List<Pelicula> contenido){
 
-        Collections.sort(contenido);//ordeno la lista 
+        Collections.sort(contenido);//ordeno la lista
 
         return contenido;
     }
